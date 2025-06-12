@@ -380,6 +380,230 @@
             font-size: 12px;
         }
 
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .cv-container {
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .header {
+                padding: 20px;
+                text-align: center;
+            }
+
+            .name {
+                font-size: 28px;
+            }
+
+            .title {
+                font-size: 16px;
+            }
+
+            .tagline {
+                font-size: 13px;
+                max-width: none;
+            }
+
+            .contact-info {
+                justify-content: center;
+                gap: 8px 15px;
+            }
+
+            .contact-item {
+                font-size: 13px;
+            }
+
+            .contact-icon {
+                width: 16px;
+            }
+
+            /* Stack columns vertically on mobile */
+            .content {
+                flex-direction: column;
+            }
+
+            .left-column,
+            .right-column {
+                flex: none;
+                width: 100%;
+                padding: 20px;
+            }
+
+            .left-column {
+                background: var(--slate-50);
+                border-bottom: 1px solid var(--slate-200);
+            }
+
+            .section {
+                margin-bottom: 20px;
+            }
+
+            .section-title {
+                font-size: 14px;
+                margin-bottom: 12px;
+            }
+
+            .summary {
+                font-size: 13px;
+            }
+
+            /* Tech skills grid adjustment for mobile */
+            .tech-skills-category {
+                width: 100%;
+                margin-bottom: 16px;
+            }
+
+            .tech-skills-title {
+                font-size: 13px;
+            }
+
+            .tech-skills-list li {
+                font-size: 12px;
+            }
+
+            /* Job header stack on mobile */
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .job-date {
+                align-self: flex-start;
+                margin-top: 4px;
+            }
+
+            .company {
+                font-size: 15px;
+            }
+
+            .job-title {
+                font-size: 13px;
+            }
+
+            .job-description li {
+                font-size: 12px;
+            }
+
+            /* Project adjustments */
+            .project {
+                padding: 12px;
+                margin-bottom: 15px;
+            }
+
+            .project-title {
+                font-size: 14px;
+            }
+
+            .project-tech {
+                font-size: 11px;
+            }
+
+            .project-description {
+                font-size: 12px;
+            }
+
+            /* Education adjustments */
+            .education-header {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .education-institution {
+                font-size: 13px;
+            }
+
+            .education-degree {
+                font-size: 12px;
+            }
+
+            .education-date,
+            .education-location {
+                font-size: 11px;
+            }
+
+            /* Skill bars */
+            .skill-name {
+                font-size: 12px;
+            }
+
+            .skill-level-text {
+                font-size: 11px;
+            }
+        }
+
+        /* Extra small mobile devices */
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            .name {
+                font-size: 24px;
+            }
+
+            .title {
+                font-size: 14px;
+            }
+
+            .tagline {
+                font-size: 12px;
+            }
+
+            .contact-info {
+                gap: 6px 10px;
+            }
+
+            .contact-item {
+                font-size: 12px;
+            }
+
+            .left-column,
+            .right-column {
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 13px;
+            }
+
+            .tech-skills-container {
+                gap: 12px;
+            }
+
+            .project {
+                padding: 10px;
+            }
+
+            .job-description {
+                padding-left: 12px;
+            }
+        }
+
+        /* Tablet responsive */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .cv-container {
+                margin: 0 20px;
+            }
+
+            .name {
+                font-size: 32px;
+            }
+
+            .tech-skills-category {
+                width: calc(50% - 8px);
+            }
+        }
+
         /* Print styles */
         @media print {
             @page {
@@ -777,88 +1001,88 @@
                         <ul class="job-description">
                             <li>Developed enterprise-level internal applications and client projects using Laravel,
                                 CodeIgniter, and React.js</li>
-                            <li>Built comprehensive HR management system with NFC-based attendance, photo capture, and
-                                IoT sensor integration</li>
-                            <li>Architected real-time GPS tracking system for fleet management and employee location
-                                monitoring across multiple sites</li>
-                            <li>Integrated hardware systems including NFC readers, biometric devices, cameras, and IoT
-                                sensors for operational efficiency</li>
-                            <li>Implemented logistics management systems and supply chain applications for various
-                                business units</li>
-                            <li>Managed server infrastructure and established best practices for system reliability and
-                                security</li>
-                            <li>Mentored junior developers and established coding standards across multiple project
-                                teams</li>
-                        </ul>
-                    </div>
-                </div>
+                         <li>Built comprehensive HR management system with NFC-based attendance, photo capture, and
+                               IoT sensor integration</li>
+                           <li>Architected real-time GPS tracking system for fleet management and employee location
+                               monitoring across multiple sites</li>
+                           <li>Integrated hardware systems including NFC readers, biometric devices, cameras, and IoT
+                               sensors for operational efficiency</li>
+                           <li>Implemented logistics management systems and supply chain applications for various
+                               business units</li>
+                           <li>Managed server infrastructure and established best practices for system reliability and
+                               security</li>
+                           <li>Mentored junior developers and established coding standards across multiple project
+                               teams</li>
+                       </ul>
+                   </div>
+               </div>
 
-                <!-- Projects & Contributions -->
-                <div class="section">
-                    <h2 class="section-title">Key Projects Portfolio</h2>
+               <!-- Projects & Contributions -->
+               <div class="section">
+                   <h2 class="section-title">Key Projects Portfolio</h2>
 
-                    <div class="project">
-                        <h3 class="project-title">Wings HR Management System - NFC & Photo Attendance</h3>
-                        <p class="project-tech">Laravel • NFC Integration • Camera API • IoT Sensors • Real-time
-                            Tracking</p>
-                        <p class="project-description">Developed a comprehensive HR system with NFC-based attendance,
-                            automated photo capture for identity verification, and IoT sensor integration for
-                            environmental monitoring. Features included real-time employee tracking, automated
-                            reporting, and seamless payroll integration across multiple Wings Group locations.</p>
-                    </div>
+                   <div class="project">
+                       <h3 class="project-title">Wings HR Management System - NFC & Photo Attendance</h3>
+                       <p class="project-tech">Laravel • NFC Integration • Camera API • IoT Sensors • Real-time
+                           Tracking</p>
+                       <p class="project-description">Developed a comprehensive HR system with NFC-based attendance,
+                           automated photo capture for identity verification, and IoT sensor integration for
+                           environmental monitoring. Features included real-time employee tracking, automated
+                           reporting, and seamless payroll integration across multiple Wings Group locations.</p>
+                   </div>
 
-                    <div class="project">
-                        <h3 class="project-title">Wings GPS Fleet Tracking System</h3>
-                        <p class="project-tech">Laravel • GPS API • Real-time WebSockets • Google Maps • Mobile App</p>
-                        <p class="project-description">Built a real-time GPS tracking system for Wings Group's fleet
-                            management and employee location monitoring. Implemented live tracking with geofencing,
-                            route optimization, and comprehensive reporting dashboard for multi-location operations
-                            management.</p>
-                    </div>
+                   <div class="project">
+                       <h3 class="project-title">Wings GPS Fleet Tracking System</h3>
+                       <p class="project-tech">Laravel • GPS API • Real-time WebSockets • Google Maps • Mobile App</p>
+                       <p class="project-description">Built a real-time GPS tracking system for Wings Group's fleet
+                           management and employee location monitoring. Implemented live tracking with geofencing,
+                           route optimization, and comprehensive reporting dashboard for multi-location operations
+                           management.</p>
+                   </div>
 
-                    <div class="project">
-                        <h3 class="project-title">Zon.Tools - Amazon PPC Optimization Platform</h3>
-                        <p class="project-tech">Laravel • AWS Lambda • React.js • Machine Learning</p>
-                        <p class="project-description">Developed a comprehensive Amazon advertising management platform
-                            with automated bidding strategies and machine learning algorithms for performance
-                            optimization across global marketplaces.</p>
-                    </div>
+                   <div class="project">
+                       <h3 class="project-title">Zon.Tools - Amazon PPC Optimization Platform</h3>
+                       <p class="project-tech">Laravel • AWS Lambda • React.js • Machine Learning</p>
+                       <p class="project-description">Developed a comprehensive Amazon advertising management platform
+                           with automated bidding strategies and machine learning algorithms for performance
+                           optimization across global marketplaces.</p>
+                   </div>
 
-                    <div class="project">
-                        <h3 class="project-title">MadBot.ai - European E-commerce PPC Platform</h3>
-                        <p class="project-tech">Laravel • Golang • Microservices • Real-time Analytics</p>
-                        <p class="project-description">Created a hybrid advertising solution for Bol.com marketplace
-                            using Laravel frontend with Golang microservices for high-performance data processing and
-                            real-time optimization.</p>
-                    </div>
+                   <div class="project">
+                       <h3 class="project-title">MadBot.ai - European E-commerce PPC Platform</h3>
+                       <p class="project-tech">Laravel • Golang • Microservices • Real-time Analytics</p>
+                       <p class="project-description">Created a hybrid advertising solution for Bol.com marketplace
+                           using Laravel frontend with Golang microservices for high-performance data processing and
+                           real-time optimization.</p>
+                   </div>
 
-                    <div class="project">
-                        <h3 class="project-title">KlinikPro.id - Healthcare Management SaaS</h3>
-                        <p class="project-tech">Laravel • SaaS Architecture • HIPAA Compliance</p>
-                        <p class="project-description">Built a comprehensive multi-tenant healthcare platform for
-                            Indonesian clinics featuring appointment scheduling, patient management, and regulatory
-                            compliance systems.</p>
-                    </div>
+                   <div class="project">
+                       <h3 class="project-title">KlinikPro.id - Healthcare Management SaaS</h3>
+                       <p class="project-tech">Laravel • SaaS Architecture • HIPAA Compliance</p>
+                       <p class="project-description">Built a comprehensive multi-tenant healthcare platform for
+                           Indonesian clinics featuring appointment scheduling, patient management, and regulatory
+                           compliance systems.</p>
+                   </div>
 
-                    <div class="project">
-                        <h3 class="project-title">Zenyum.sg - Dental Health Platform</h3>
-                        <p class="project-tech">Laravel • Vue.js • AWS • Telemedicine</p>
-                        <p class="project-description">Enhanced and optimized Zenyum's dental health platform for
-                            Southeast Asian markets, implementing virtual consultation features and improving user
-                            engagement systems.</p>
-                    </div>
+                   <div class="project">
+                       <h3 class="project-title">Zenyum.sg - Dental Health Platform</h3>
+                       <p class="project-tech">Laravel • Vue.js • AWS • Telemedicine</p>
+                       <p class="project-description">Enhanced and optimized Zenyum's dental health platform for
+                           Southeast Asian markets, implementing virtual consultation features and improving user
+                           engagement systems.</p>
+                   </div>
 
-                    <div class="project">
-                        <h3 class="project-title">Mr.DIY - Interactive Retail Campaigns</h3>
-                        <p class="project-tech">React.js • Node.js • Gamification • Mobile-First</p>
-                        <p class="project-description">Developed engaging gamified web campaigns for the Mr.DIY retail
-                            brand, creating responsive digital promotions and interactive experiences for multi-market
-                            deployment.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                   <div class="project">
+                       <h3 class="project-title">Mr.DIY - Interactive Retail Campaigns</h3>
+                       <p class="project-tech">React.js • Node.js • Gamification • Mobile-First</p>
+                       <p class="project-description">Developed engaging gamified web campaigns for the Mr.DIY retail
+                           brand, creating responsive digital promotions and interactive experiences for multi-market
+                           deployment.</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
 </body>
 
 </html>
