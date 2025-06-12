@@ -3,47 +3,858 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robioki Denis</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>ROBIOKI DENIS - Senior Fullstack Engineer</title>
+    <style>
+        /* Base styles */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            /* Tailwind CSS colors */
+            --slate-50: #f8fafc;
+            --slate-100: #f1f5f9;
+            --slate-200: #e2e8f0;
+            --slate-300: #cbd5e1;
+            --slate-400: #94a3b8;
+            --slate-500: #64748b;
+            --slate-600: #475569;
+            --slate-700: #334155;
+            --slate-800: #1e293b;
+            --slate-900: #0f172a;
+            --slate-950: #020617;
+
+            --indigo-50: #eef2ff;
+            --indigo-100: #e0e7ff;
+            --indigo-200: #c7d2fe;
+            --indigo-300: #a5b4fc;
+            --indigo-400: #818cf8;
+            --indigo-500: #6366f1;
+            --indigo-600: #4f46e5;
+            --indigo-700: #4338ca;
+            --indigo-800: #3730a3;
+            --indigo-900: #312e81;
+            --indigo-950: #1e1b4b;
+
+            --emerald-50: #ecfdf5;
+            --emerald-100: #d1fae5;
+            --emerald-200: #a7f3d0;
+            --emerald-300: #6ee7b7;
+            --emerald-400: #34d399;
+            --emerald-500: #10b981;
+            --emerald-600: #059669;
+            --emerald-700: #047857;
+            --emerald-800: #065f46;
+            --emerald-900: #064e3b;
+            --emerald-950: #022c22;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--slate-800);
+            background-color: var(--slate-50);
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            page-break-before: avoid;
+            page-break-after: avoid;
+        }
+
+        /* Header section */
+        .header {
+            background: var(--indigo-600);
+            color: white;
+            padding: 30px;
+            position: relative;
+            page-break-after: avoid;
+            page-break-inside: avoid;
+        }
+
+        .header-left {
+            flex: 2;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .tagline {
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 16px;
+            opacity: 0.85;
+            max-width: 650px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            margin-right: 8px;
+            width: 18px;
+            opacity: 0.9;
+        }
+
+        /* Main content */
+        .content {
+            display: flex;
+            padding: 0;
+        }
+
+        .left-column {
+            flex: 1;
+            background: var(--slate-100);
+            padding: 25px 22px;
+        }
+
+        .right-column {
+            flex: 2;
+            padding: 25px;
+        }
+
+        .section {
+            margin-bottom: 28px;
+            page-break-inside: avoid;
+        }
+
+        .section-title {
+            color: var(--indigo-600);
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--indigo-200);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* About me section */
+        .summary {
+            margin-bottom: 18px;
+            font-size: 13.5px;
+            line-height: 1.5;
+            color: var(--slate-700);
+        }
+
+        /* Skills section */
+        .skill-item {
+            margin-bottom: 12px;
+            page-break-inside: avoid;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--slate-700);
+            font-size: 13.5px;
+        }
+
+        .skill-level-text {
+            color: var(--indigo-600);
+            font-size: 12px;
+            font-weight: 400;
+        }
+
+        .skill-bar {
+            height: 5px;
+            background: var(--slate-200);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 5px;
+            background: var(--indigo-500);
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* Experience section */
+        .job {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--slate-200);
+            page-break-inside: avoid;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            align-items: flex-start;
+        }
+
+        .company {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--indigo-600);
+        }
+
+        .job-location {
+            font-weight: 400;
+            font-style: italic;
+            color: var(--slate-500);
+            margin-top: 2px;
+            font-size: 12.5px;
+        }
+
+        .job-date {
+            color: var(--slate-500);
+            background: var(--slate-100);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .job-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--slate-700);
+            font-size: 14px;
+        }
+
+        .job-description {
+            margin-left: 0;
+            padding-left: 16px;
+        }
+
+        .job-description li {
+            margin-bottom: 6px;
+            position: relative;
+            color: var(--slate-600);
+            font-size: 13px;
+        }
+
+        /* Projects section */
+        .project {
+            margin-bottom: 18px;
+            padding: 14px;
+            border-radius: 6px;
+            background: var(--slate-50);
+            border-left: 3px solid var(--indigo-400);
+            transition: all 0.2s ease;
+            page-break-inside: avoid;
+        }
+
+        .project:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border-left-color: var(--indigo-600);
+        }
+
+        .project-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 15px;
+            color: var(--indigo-700);
+        }
+
+        .project-tech {
+            display: inline-block;
+            margin-bottom: 6px;
+            color: var(--emerald-600);
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .project-description {
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: var(--slate-600);
+        }
+
+        /* Technical skills section */
+        .tech-skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .tech-skills-category {
+            width: calc(50% - 8px);
+            page-break-inside: avoid;
+        }
+
+        .tech-skills-title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: var(--indigo-700);
+        }
+
+        .tech-skills-list {
+            list-style-type: none;
+        }
+
+        .tech-skills-list li {
+            font-size: 12.5px;
+            margin-bottom: 4px;
+            position: relative;
+            padding-left: 12px;
+            color: var(--slate-600);
+        }
+
+        .tech-skills-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--emerald-500);
+        }
+
+        /* Education section */
+        .education-item {
+            margin-bottom: 16px;
+            page-break-inside: avoid;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 4px;
+        }
+
+        .education-institution {
+            font-weight: 600;
+            color: var(--indigo-600);
+            font-size: 14px;
+        }
+
+        .education-date {
+            color: var(--slate-500);
+            font-size: 12px;
+        }
+
+        .education-degree {
+            font-weight: 500;
+            color: var(--slate-700);
+            font-size: 13px;
+        }
+
+        .education-location {
+            color: var(--slate-500);
+            font-size: 12px;
+        }
+
+        /* Print styles */
+        @media print {
+            @page {
+                size: A4;
+                margin: 8mm;
+            }
+
+            html,
+            body {
+                width: 210mm;
+                height: 297mm;
+                background: white;
+                padding: 0;
+                margin: 0;
+            }
+
+            .cv-container {
+                width: 100%;
+                box-shadow: none;
+                max-width: none;
+                border-radius: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: #333 !important;
+            }
+
+            /* Ensure header prints in color without being split */
+            .header {
+                background-color: #4f46e5 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+                break-inside: avoid;
+                break-after: avoid;
+            }
+
+            .header a {
+                color: white !important;
+            }
+
+            .content {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .left-column {
+                background: #f1f5f9 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .section-title {
+                color: #4338ca !important;
+                border-bottom-color: #a5b4fc !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .company,
+            .project-title,
+            .tech-skills-title,
+            .education-institution {
+                color: #4338ca !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .skill-level {
+                background: #6366f1 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .project {
+                border-left: 3px solid #818cf8 !important;
+                background: #f8fafc !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .project-tech {
+                color: #059669 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .tech-skills-list li:before {
+                color: #10b981 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+
+            .header,
+            .left-column>.section:first-child,
+            .right-column>.section:first-child {
+                break-after: avoid;
+                break-inside: avoid;
+            }
+
+            .job,
+            .project,
+            .education-item,
+            .skill-item,
+            .tech-skills-category {
+                break-inside: avoid;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="h-screen bg-gray-200  dark:bg-gray-800   flex flex-wrap items-center  justify-center  ">
-        <div
-            class="container lg:w-2/6 xl:w-2/7 sm:w-full md:w-2/3    bg-white  shadow-lg    transform   duration-200 easy-in-out">
-            <div class=" h-32 overflow-hidden">
-                <img class="w-full"
-                    src="https://images.unsplash.com/photo-1605379399642-870262d3d051?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
-                    alt="" />
-                
-            </div>
-            <div class="flex justify-center px-5  -mt-12">
-                <img class="h-32 w-32 bg-white p-2 rounded-full   "
-                    src="https://avatars.githubusercontent.com/u/22372509?v=4"
-                    alt="" />
-
-            </div>
-            <div class=" ">
-                <div class="text-center px-14">
-                    <h2 class="text-gray-800 text-3xl font-bold">Robioki Denis</h2>
-                    <h4 class="text-gray">DevOps Engineer</h4>
-                    <p class="text-gray-400 mt-2">@robiokidenis</p>
-                    <p class="mt-2 text-gray-600">Skilled DevOps engineer with experience in networking and programming, setting up and managing containers in microservices. wrote scripts to automate system updates and testing. Fast learner and having good analytical thinking, enjoy working on the latest technology and working closely with those responsible for building all the necessary features or tools to improve existing processes and unlock potential growth.</p>
-                    <a href="https://github.com/robiokidenis" class="text-blue mt-5" target="_blank" rel="noopener noreferrer">See More...</a>
-                    
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <h1 class="name">Robioki Denis</h1>
+                <p class="title">Senior Fullstack Engineer</p>
+                <p class="tagline">Experienced developer specializing in scalable web applications, DevOps automation,
+                    and cloud infrastructure across diverse industries and client projects.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <span>Bekasi, Indonesia</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <span>(+62) 813 81393739</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <span>robiokidenis@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">🔗</span>
+                        <a href="https://github.com/robiokidenis" target="_blank"
+                            style="color: white; text-decoration: none;">github.com/robiokidenis</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📝</span>
+                        <a href="https://robiokidenis.medium.com" target="_blank"
+                            style="color: white; text-decoration: none;">robiokidenis.medium.com</a>
+                    </div>
                 </div>
-                <hr class="mt-6" />
-                <div class="flex  bg-gray-50 ">
-                    <div class="text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer">
-                        <p><span class="font-semibold">2.5 k </span> Followers</p>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <!-- About Me -->
+                <div class="section">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="summary">
+                        Results-driven Senior Fullstack Engineer with 8+ years of experience architecting, developing,
+                        and deploying high-performance web applications and cloud infrastructure. A specialist in the
+                        Laravel and React ecosystems, with deep expertise in DevOps, CI/CD automation, and multi-cloud
+                        environments (AWS, Azure, GCP). Proven ability to lead projects and translate complex business
+                        needs into scalable, maintainable, and cost-effective technical solutions.
+                    </p>
+                </div>
+
+                <!-- Technical Skills -->
+                <div class="section">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <div class="tech-skills-container">
+                        <div class="tech-skills-category">
+                            <h3 class="tech-skills-title">Programming</h3>
+                            <ul class="tech-skills-list">
+                                <li>PHP (Laravel)</li>
+                                <li>JavaScript/TypeScript</li>
+                                <li>Golang</li>
+                                <li>Python</li>
+                            </ul>
+                        </div>
+                        <div class="tech-skills-category">
+                            <h3 class="tech-skills-title">Frontend</h3>
+                            <ul class="tech-skills-list">
+                                <li>Vue.js</li>
+                                <li>React.js</li>
+                                <li>Next.js</li>
+                                <li>Tailwind CSS</li>
+                            </ul>
+                        </div>
+                        <div class="tech-skills-category">
+                            <h3 class="tech-skills-title">Database</h3>
+                            <ul class="tech-skills-list">
+                                <li>MySQL</li>
+                                <li>MongoDB</li>
+                                <li>PostgreSQL</li>
+                                <li>Redis</li>
+                            </ul>
+                        </div>
+                        <div class="tech-skills-category">
+                            <h3 class="tech-skills-title">Cloud Services</h3>
+                            <ul class="tech-skills-list">
+                                <li>AWS (EC2, Lambda, ECS)</li>
+                                <li>Azure</li>
+                                <li>Google Cloud</li>
+                            </ul>
+                        </div>
+                        <div class="tech-skills-category">
+                            <h3 class="tech-skills-title">DevOps & CI/CD</h3>
+                            <ul class="tech-skills-list">
+                                <li>GitHub Actions</li>
+                                <li>Docker</li>
+                                <li>Kubernetes</li>
+                                <li>Terraform</li>
+                            </ul>
+                        </div>
+                        <div class="tech-skills-category">
+                            <h3 class="tech-skills-title">IoT & Tracking</h3>
+                            <ul class="tech-skills-list">
+                                <li>NFC Integration</li>
+                                <li>GPS Tracking Systems</li>
+                                <li>Biometric Systems</li>
+                                <li>Real-time Location</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="border"></div>
-                    <div class="text-center w-1/2 p-4 hover:bg-gray-100 cursor-pointer">
-                        <p> <span class="font-semibold">1.0 k </span> Following</p>
+                </div>
+
+                <!-- Core Skills -->
+                <div class="section">
+                    <h2 class="section-title">Core Skills</h2>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            Laravel
+                            <span class="skill-level-text">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            Vue.js
+                            <span class="skill-level-text">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            Docker
+                            <span class="skill-level-text">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            React.js
+                            <span class="skill-level-text">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            AWS Cloud
+                            <span class="skill-level-text">Proficient</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">
+                            GPS/IoT Systems
+                            <span class="skill-level-text">Proficient</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div class="education-institution">STIMIK BANISALEH</div>
+                            <div class="education-date">2019</div>
+                        </div>
+                        <div class="education-degree">Bachelor of Technology</div>
+                        <div class="education-location">Indonesia</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="right-column">
+                <!-- Experience -->
+                <div class="section">
+                    <h2 class="section-title">Work Experience</h2>
+
+                    <!-- Latest position: GRtech -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">GRTech</div>
+                                <div class="job-location">Malaysia (Remote)</div>
+                            </div>
+                            <div class="job-date">Jun 2024 - Present</div>
+                        </div>
+                        <div class="job-title">Senior Fullstack Engineer</div>
+                        <ul class="job-description">
+                            <li>Developing educational software platforms for diverse clients across Southeast Asia
+                                using Laravel and Vue.js</li>
+                            <li>Designing and maintaining cloud infrastructure on Azure and AWS for multiple client
+                                projects</li>
+                            <li>Building scalable learning management systems tailored to different educational
+                                institutions' requirements</li>
+                            <li>Implementing CI/CD pipelines and DevOps practices for educational technology
+                                applications</li>
+                            <li>Collaborating with international teams to deliver user-friendly educational solutions
+                            </li>
+                        </ul>
                     </div>
 
+                    <!-- Admiral Digital -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">Admiral Digital</div>
+                                <div class="job-location">Singapore (Remote)</div>
+                            </div>
+                            <div class="job-date">Jun 2023 - Mar 2024</div>
+                        </div>
+                        <div class="job-title">Senior Fullstack Web Developer</div>
+                        <ul class="job-description">
+                            <li>Developed dynamic web applications for various international clients using ReactJS,
+                                VueJS, and Laravel</li>
+                            <li>Built custom e-commerce solutions and marketing websites for clients across different
+                                industries</li>
+                            <li>Integrated third-party APIs and Shopify platforms to meet diverse client business
+                                requirements</li>
+                            <li>Worked closely with design teams to translate UI/UX mockups into responsive,
+                                pixel-perfect implementations</li>
+                            <li>Delivered projects ranging from corporate websites to complex web applications</li>
+                        </ul>
+                    </div>
+
+                    <!-- Particlebyte -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">Particlebyte | Carbon6 (Client)</div>
+                                <div class="job-location">Netherlands (Remote)</div>
+                            </div>
+                            <div class="job-date">Nov 2021 - Jun 2024</div>
+                        </div>
+                        <div class="job-title">Senior Fullstack Engineer & DevOps Engineer</div>
+                        <ul class="job-description">
+                            <li>Developed sophisticated web applications for clients in advertising technology and
+                                e-commerce sectors</li>
+                            <li>Built and maintained infrastructure for Carbon6's Amazon PPC management platform using
+                                AWS and Azure</li>
+                            <li>Implemented automated deployment pipelines using GitHub Actions, Terraform, and Docker
+                            </li>
+                            <li>Created microservices architecture using Laravel, Golang, and Node.js for various client
+                                projects</li>
+                            <li>Worked on diverse projects including NLP-powered tools and machine learning applications
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Wingsgroup -->
+                    <div class="job">
+                        <div class="job-header">
+                            <div>
+                                <div class="company">Wingsgroup</div>
+                                <div class="job-location">Indonesia</div>
+                            </div>
+                            <div class="job-date">Mar 2013 - Oct 2021</div>
+                        </div>
+                        <div class="job-title">Senior Fullstack Engineer</div>
+                        <ul class="job-description">
+                            <li>Developed enterprise-level internal applications and client projects using Laravel,
+                                CodeIgniter, and React.js</li>
+                            <li>Built comprehensive HR management system with NFC-based attendance, photo capture, and
+                                IoT sensor integration</li>
+                            <li>Architected real-time GPS tracking system for fleet management and employee location
+                                monitoring across multiple sites</li>
+                            <li>Integrated hardware systems including NFC readers, biometric devices, cameras, and IoT
+                                sensors for operational efficiency</li>
+                            <li>Implemented logistics management systems and supply chain applications for various
+                                business units</li>
+                            <li>Managed server infrastructure and established best practices for system reliability and
+                                security</li>
+                            <li>Mentored junior developers and established coding standards across multiple project
+                                teams</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Projects & Contributions -->
+                <div class="section">
+                    <h2 class="section-title">Key Projects Portfolio</h2>
+
+                    <div class="project">
+                        <h3 class="project-title">Wings HR Management System - NFC & Photo Attendance</h3>
+                        <p class="project-tech">Laravel • NFC Integration • Camera API • IoT Sensors • Real-time
+                            Tracking</p>
+                        <p class="project-description">Developed a comprehensive HR system with NFC-based attendance,
+                            automated photo capture for identity verification, and IoT sensor integration for
+                            environmental monitoring. Features included real-time employee tracking, automated
+                            reporting, and seamless payroll integration across multiple Wings Group locations.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3 class="project-title">Wings GPS Fleet Tracking System</h3>
+                        <p class="project-tech">Laravel • GPS API • Real-time WebSockets • Google Maps • Mobile App</p>
+                        <p class="project-description">Built a real-time GPS tracking system for Wings Group's fleet
+                            management and employee location monitoring. Implemented live tracking with geofencing,
+                            route optimization, and comprehensive reporting dashboard for multi-location operations
+                            management.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3 class="project-title">Zon.Tools - Amazon PPC Optimization Platform</h3>
+                        <p class="project-tech">Laravel • AWS Lambda • React.js • Machine Learning</p>
+                        <p class="project-description">Developed a comprehensive Amazon advertising management platform
+                            with automated bidding strategies and machine learning algorithms for performance
+                            optimization across global marketplaces.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3 class="project-title">MadBot.ai - European E-commerce PPC Platform</h3>
+                        <p class="project-tech">Laravel • Golang • Microservices • Real-time Analytics</p>
+                        <p class="project-description">Created a hybrid advertising solution for Bol.com marketplace
+                            using Laravel frontend with Golang microservices for high-performance data processing and
+                            real-time optimization.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3 class="project-title">KlinikPro.id - Healthcare Management SaaS</h3>
+                        <p class="project-tech">Laravel • SaaS Architecture • HIPAA Compliance</p>
+                        <p class="project-description">Built a comprehensive multi-tenant healthcare platform for
+                            Indonesian clinics featuring appointment scheduling, patient management, and regulatory
+                            compliance systems.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3 class="project-title">Zenyum.sg - Dental Health Platform</h3>
+                        <p class="project-tech">Laravel • Vue.js • AWS • Telemedicine</p>
+                        <p class="project-description">Enhanced and optimized Zenyum's dental health platform for
+                            Southeast Asian markets, implementing virtual consultation features and improving user
+                            engagement systems.</p>
+                    </div>
+
+                    <div class="project">
+                        <h3 class="project-title">Mr.DIY - Interactive Retail Campaigns</h3>
+                        <p class="project-tech">React.js • Node.js • Gamification • Mobile-First</p>
+                        <p class="project-description">Developed engaging gamified web campaigns for the Mr.DIY retail
+                            brand, creating responsive digital promotions and interactive experiences for multi-market
+                            deployment.</p>
+                    </div>
                 </div>
             </div>
         </div>
